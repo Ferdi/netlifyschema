@@ -1,0 +1,29 @@
+---
+label: b
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: file
+  name: thumbnail
+  label: thumbnail
+- type: number
+  name: rating
+  label: rating
+- type: field_group_list
+  name: testimonials
+  label: testimonials
+  fields:
+  - type: text
+    name: quote
+    label: quote
+  - type: text
+    name: author
+    label: author
