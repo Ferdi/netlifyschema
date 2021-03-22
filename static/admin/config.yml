@@ -26,4 +26,11 @@ collections:
             name: "align"
             widget: "select"
             options: ["left", "center", "right"]
+          - label: "City"
+            name: "airport-code"
+            widget: "select"
+            options:
+              - { label: "Chicago", value: "ORD" }
+              - { label: "Paris", value: "CDG" }
+              - { label: "Tokyo", value: "HND" }
 
