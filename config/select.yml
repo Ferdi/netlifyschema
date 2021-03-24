@@ -1,9 +1,6 @@
-align: center
-airport-code: HND
+align: left
+airport-code: CDG
 tags:
   - UX
-  - Design
 tags2:
   - Design
-  - UX
-  - Dev
