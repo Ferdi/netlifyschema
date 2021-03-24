@@ -74,4 +74,35 @@ collections:
                   - {label: "City", name: "city", widget: "string"}
                   - {label: "Postal Code", name: "post-code", widget: "string"}
 
+          - label: structure
+            name: structure
+            widget: list
+            fields:
+              - label: type
+                name: type
+                widget: select
+                options:
+                  - copy
+                  - divider
+                  - image
+                  - infographic
+                  - productCircle
+                  - quote
+              - label: content
+                name: content
+                widget: object
+                fields:
+                  - label: text
+                    name: text
+                    widget: markdown
+                    condition: {type: fieldValue, field: type, oneOf: [copy, productCircle, quote]}
+                  - label: src
+                    name: src
+                    widget: image
+                    condition: {type: fieldValue, field: type, oneOf: [image, infographic, productCircle]}
+                  - label: overlay
+                    name: overlay
+                    widget: image
+                    condition: {type: fieldValue, field: type, equals: infographic}
+
 
