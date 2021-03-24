@@ -51,11 +51,7 @@ collections:
       - label: Object
         name: object
         file: config/object.yml
-        fields: 
-        - label: "Profile"
-          name: "profile"
-          widget: "object"
-          summary: '{{fields.name}}: {{fields.birthdate}}'
+        summary: '{{fields.name}}: {{fields.birthdate}}'
           fields:
             - {label: "Public", name: "public", widget: "boolean", default: true}
             - {label: "Name", name: "name", widget: "string"}
