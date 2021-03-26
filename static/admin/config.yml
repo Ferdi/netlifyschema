@@ -7,91 +7,44 @@ media_folder: static/img
 collections:
   - name: "blog" 
     label: "Blog" 
-    folder: "content/blog" 
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+    folder: "content/blog"
+    category: tag1
+    create: true 
+    fields: 
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: fields
-    label: Fields
+  - name: settings
+    label: Settings
+    category: tag1
     files:
-      - label: Select
-        name: select
-        file: config/select.yml
+      - label: Theme settings
+        name: themesettings
+        file: config/themesettings.yml
         fields:
-          - label: "Align Content"
-            name: "align"
-            widget: "select"
-            options: ["left", "center", "right"]
-          - label: "City"
-            name: "airport-code"
-            widget: "select"
-            options:
-              - { label: "Chicago", value: "ORD" }
-              - { label: "Paris", value: "CDG" }
-              - { label: "Tokyo", value: "HND" }
-          - label: "Tags"
-            name: "tags"
-            widget: "select"
-            multiple: true
-            options: ["Design", "UX", "Dev"]
-            default: ["Design"]
-          - label: "Tags"
-            description: "default selected, min=1, max=3"
-            name: "tags2"
-            widget: "select"
-            multiple: true
-            min: 1
-            max: 3
-            options: ["Design", "UX", "Dev"]
-            default: ["Design"]
-
-      - label: Object
-        name: object
-        file: config/object.yml
+          - label: "Color of your thmeme"
+            name: "themecolor"
+            widget: "string"
+      - label: GA settings
+        name: gasettings
+        file: config/gasettings.yml
         fields:
-          - label: "Profile"
-            name: "profile"
-            widget: "object"
-            summary: '{{fields.name}}: {{fields.birthdate}}'
-            fields:
-              - {label: "Public", name: "public", widget: "boolean", default: true}
-              - {label: "Name", name: "name", widget: "string"}
-              - label: "Birthdate"
-                name: "birthdate"
-                widget: "date"
-                default: ""
-                format: "MM/DD/YYYY"
-              - label: "Address"
-                name: "address"
-                widget: "object"
-                collapsed: true
-                fields: 
-                  - {label: "Street Address", name: "street", widget: "string"}
-                  - {label: "City", name: "city", widget: "string"}
-                  - {label: "Postal Code", name: "post-code", widget: "string"}
+          - label: "Please enter your GA code"
+            name: "gacode"
+            widget: "string"
 
 
-      - label: Dependent
-        name: dependent
-        file: config/dependent.yml
+  - name: psettings
+    label: Personal Settings
+    category: tag1
+    files:
+      - label: Bio
+        name: bio
+        file: content/bio.yml
         fields:
-          - { label: What kind, name: kind, widget: select, 
-              options: [internal, external]
-            }
-          - {
-              label: Link to, 
-              name: linkto-internal, 
-              widget: string,
-              condition: {field: kind, equals: internal}
-            }
-          - {
-              label: Link to, 
-              name: linkto-external, 
-              widget: string,
-              condition: {field: kind, equals: external}
-            }
-
+          - {label: "Bio", name: "bio", widget: "markdown"}
+      - label: Sport
+        name: sport
+        file: config/sport.yml
+        fields:
+          - {label: "Favorite team", name: "favteam", widget: "string"}
