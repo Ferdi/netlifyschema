@@ -25,6 +25,10 @@ collections:
           - label: "Color of your thmeme"
             name: "themecolor"
             widget: "string"
+          - label: "Font size"
+            name: "fontsize"
+            widget: "string"
+            
       - label: GA settings
         name: gasettings
         file: config/gasettings.yml
