@@ -58,6 +58,6 @@ collections:
             widget: "relation", 
             collection: "blog", 
             search_fields: ["title"], 
-            value_field: ["title"],
+            value_field: "title",
             multiple: true
             }
