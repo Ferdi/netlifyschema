@@ -52,3 +52,4 @@ collections:
         file: config/sport.yml
         fields:
           - {label: "Favorite team", name: "favteam", widget: "string"}
+          - {label: "Ref blogs", name: "refblogs", widget: "relation", collection: "blog", search_fields: "title", multiple: "true"}
