@@ -1,0 +1,9 @@
+bio: my bio
+profile:
+  birthdate: 04/09/2021
+  public: true
+  name: Ferdi
+  address:
+    street: 18 road
+    city: lex
+    post-code: "02421"
